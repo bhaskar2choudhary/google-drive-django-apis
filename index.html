@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Google Drive Authentication</title>
+
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+    crossorigin="anonymous">
+</head>
+<body>
+  <div class="jumbotron">
+    {% if not user.is_authenticated %}
+    <h4>Click to authorize yourself with iGlobe APIs</h4>
+    {% else %}
+    <h4>Thank you!</h4>
+    {% endif %}
+    {% if user.is_authenticated %}
+      <p>Authorized as {{ user.username }}. You may close the tab now.</p>
+    {% else %}
+      <a class="btn btn-primary" href="{% url 'social:begin' 'google-oauth2' %}">
+        Authorize
+      </a>
+    {% endif %}
+  </div>
+</body>
+</html>

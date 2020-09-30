@@ -1,0 +1,8 @@
+# Restart the server each time this file is updated.
+
+# google credentials
+client_id: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com'
+client_secret: 'xxxxxxxxxxxxxxxxxxxxxxxx'
+
+# domain
+domain: 'http://127.0.0.1:8000' # In production, replace it with domain of the machine where Django server will be hosted
